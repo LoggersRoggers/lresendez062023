@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logan Resendez</title>
+    <link href="https://fonts.cdnfonts.com/css/chinese-rocks" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+<link rel="manifest" href="Favicon/site.webmanifest">
+<link rel="mask-icon" href="Favicon/safari-pinned-tab.svg" color="#ce010a">
+<link rel="shortcut icon" href="Favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-config" content="Favicon/browserconfig.xml">
+<meta name="theme-color" content="#000000">
+                
+    <style>
+/* set page colors with variables */
+:root
+{
+--color-primary:#000000;
+--color-secondary:#cc0511;
+}
+
+        /* .header {background-color:var(--color-secondary);} */
+
+        /* reset browser */
+        *, *::before, *::after
+        {
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+
+        /* fix browser bounce */
+        body
+        {
+            overflow-x:auto;
+            width:100%;
+            overscroll-behavior:none;
+        }
+
+        /* general css for mobile first */
+        body
+        {
+            font-family: 'Chinese Rocks Rg', sans-serif;
+            line-height:1.5;
+            background-color:white;
+        }
+        a
+        {
+            text-decoration:none;
+        }
+        p
+        {
+            margin:1rem 0;
+        }
+        h1, h2
+        {
+            text-align:center;
+        }
+        li
+        {
+            line-height:2;
+        }
+        h1, h2, h3{line-height: 1.2;}
+        .container
+        {
+            max-width:1200px;
+            margin:0 auto;
+            padding:0 30px;
+            border:none;
+        }
+
+        /* Header */
+        .header
+        {
+            background-color: var(--color-primary);
+            height:70px;
+        }
+        .header .container
+        {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            height:100%;
+            padding:0 20px 0 20px;
+        }
+        header img
+        {
+            margin-top:20px;
+            height:60px;
+        }
+        .logos
+        {
+            display:none;
+        }
+        .logo
+        {
+            width:300px;
+        }
+        .menu
+        {
+            display: flex;
+            width:200px;
+            list-style-type:none;
+        }
+        .menu li
+        {
+            padding:0 10px 0 10px;
+        }
+        .menu li a
+        {
+            color:#fff;
+        }
+        .menu li a:hover{color:var(--color-secondary);}
+        /* End Header */
+
+        /* Showcase */
+        .showcase
+        {
+            background-color:var(--color-secondary);
+            background-image:linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+            padding:30px;
+            padding-bottom:50px;
+        }
+        #showcase-text
+        {
+            color:#fff;
+            text-align:center;
+            margin:50px auto;
+            max-width:500px;
+        }
+        .showcase h1
+        {
+            font-size:50px;
+            margin-bottom:20px;
+            text-align: center;
+            text-shadow:5px 5px 5px black;
+        }
+        .showcase h2 
+        {
+            text-align:center;
+            text-shadow:5px 5px 5px black;
+        }
+        .showcase p
+        {
+            font-size:24px;
+            margin-bottom:20px;
+        }
+        .showcase-img{text-align: center;}
+        .showcase-img img
+        {
+            border-radius:10px;
+            margin:0 auto;
+        }
+        .showcase-demo
+        {
+            color:#fff;
+            text-align:center;
+        }
+        #gangL
+        {
+            width:60%;
+            border:5px solid black;
+            border-radius:5%;
+            max-width:1000px;
+        }
+        #gangS
+        {
+            width:90%;
+            border:3px solid black;
+            border-radius:none;
+            max-width:600px;
+        }
+        /* End Showcase */
+        #features .container 
+        {
+            background-color:none;
+            display:flex;
+            gap:1rem;
+            justify-content:space-between;
+            flex-direction:column;
+        }
+        /* Cards */
+        .card
+        {
+            background-color:white;
+            padding:20px;
+            box-shadow:0 0 10px black;
+            margin-bottom:20px;
+            flex-basis:28%;
+            position: relative;
+        }
+        #horse
+        {
+            position: absolute;
+            width:40%;
+            left:0px;
+            top:-50px;
+            max-width:80px;
+            display:none;
+        }
+        #horse:hover
+        {cursor:pointer;}
+        /* Page Content */
+        .page-content
+        {
+            margin:20px 0;
+        }
+        .page-content h2, .page-content h3
+        {
+            margin:20px 0;
+        }
+        .page-content h2 {font-size:40px;}
+        .page-content h3 {font-size:25px;}
+
+        /* Semesters */
+        .semesters
+        {
+            margin:20px 0;
+        }
+        .semesters h2, .semesters h3
+        {
+            margin:20px 0;
+        }
+        .semesters h2 {font-size:40px;}
+        .semesters h3 {font-size:25px;}
+
+        /* Footer section */
+        .footer
+        {
+            background-color:var(--color-primary);
+            color:#fff;
+            text-align:center;
+            padding:50px;
+            margin-top:60px;
+        }
+
+        .footer .container
+        {
+            display:flex;
+            justify-content:space-evenly;
+            align-items:center;
+            position: relative;
+        }
+        .footer a
+        {
+            color:silver;
+        }
+        .footer a:hover
+        {
+            color:var(--color-secondary);
+        }
+        .footer h3
+        {
+            margin-bottom:20px;
+        }
+        .quote
+        {
+            text-align:left;
+        }
+        .footerlinks{display:none;}
+        .footer li {list-style-type:none;}
+
+        @media (min-width:700px)
+        {
+            #features .container
+            {flex-direction:row;}
+            h1, h2{text-align:left;}
+
+            .footerlinks{display:block;}
+            header img
+            {
+                height:100px;
+                margin-top:35px;
+            }
+            .menu li a{font-size:20px;}
+            .showcase h1{font-size:70px;}
+            .showcase h2{font-size:40px;}
+            #horse{display: block;}
+        }
+        @media (min-width:960px)
+        {
+            .logos
+            {
+                display:block;
+                margin:auto;
+            }
+            .logos-small
+            {
+                display:none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Begin Header -->
+    <header class="header">
+
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> <img src="img/logo.png" alt="logo" id="loger"> </a>
+            </div>
+    
+            <nav>
+                <ul class="menu">
+                    <li> <a href="#">Home</a> </li>
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Blog</a> </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <!-- End header -->
+
+    <!-- Begin showcase -->
+    <section class="showcase">
+        <div id="showcase-text">
+            <h1> Logan Resendez </h1>
+            <h2> Portfolio </h2>
+        </div>
+
+        <div class="showcase-img">
+            <img src="img/gang.jpg" alt="Framework-Logos" class="logos" id="gangL">
+            <img src="img/gang.jpg" alt="Framework-Logos" class="logos-small" id="gangS">
+        </div>
+
+        <p class="showcase-demo">
+            <small>Work Showcase</small>
+        </p>
+
+    </section>
+    <!-- End showcase -->
+
+    <!-- Begin features -->
+    <section id="features">
+        <div class="container">
+            <div class="card">
+                <h3> Career </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptates.</p>
+                <img src="img/horsie.svg" alt="Horse" id="horse">
+            </div>
+    
+            <div class="card">
+                <h3> Design </h3> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, reiciendis?</p>
+                <img src="img/horsie.svg" alt="Horse" id="horse">
+            </div>
+    
+            <div class="card">
+                <h3> Programming </h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, quo.</p>
+                <img src="img/horsie.svg" alt="Horse" id="horse">
+            </div>
+        </div>
+        <!-- End container -->
+    </section>
+    <!-- End features -->
+
+    <!-- Start page-content here -->
+    <section class="page-content">
+        <div class="container">
+            <h2> Introduction </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nam adipisci velit eum dolore aliquam magni similique aperiam neque. Minus enim nobis architecto illo culpa id impedit non perspiciatis temporibus!</p>
+    
+            <h3> Career </h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, inventore mollitia aliquam animi officiis velit possimus provident deserunt sapiente soluta quasi est enim fuga unde magnam consequuntur qui libero perferendis!</p>
+    
+            <h3> Design </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id doloremque laborum aliquid recusandae accusamus itaque fugiat exercitationem assumenda. Odio, minus libero sit molestias labore fugiat placeat esse doloribus sed facilis.</p>
+    
+            <h3> Programming </h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat similique, nesciunt adipisci pariatur id consectetur asperiores? Asperiores veniam provident delectus atque sed, perspiciatis distinctio ut laboriosam ratione culpa? Odio, soluta?</p>
+        </div>
+    </section>
+    <!-- End page-content -->
+
+    <!-- Begin semesters section -->
+    <section class="semesters">
+        <div class="container">
+            <h2> Key Assignments </h2>
+
+            <h3> Semester 1 </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fugit nisi temporibus qui. Ex molestias amet doloribus asperiores voluptatibus modi.</p>
+
+            <h3> Semester 2 </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente neque doloremque dolores dolorem voluptatum. A aut fugit quis nobis impedit.</p>
+        </div>
+    </section>
+    <!-- End semesters section -->
+
+    <!-- Begin footer section -->
+    <footer class="footer">
+
+        <div class="container">
+            <div class="quote">
+                <h3> Final Thoughts </h3>
+                <blockquote>
+                    "Look just do one thing or the other, don't try to be two people at once, that's all I'm saying."
+                </blockquote>
+                <p> - Arthur Morgan </p>
+            </div>
+                <div class="footerlinks">
+                    <h3>Links</h3>
+                    <ul>
+                        <li> <a href="#">Home</a> </li>
+                        <li> <a href="#">About</a> </li>
+                        <li> <a href="#">Blog</a> </li>
+                    </ul>
+                </div>
+        </div>
+
+    </footer>
+    <!-- End footer section -->
+</body>
+</html>
