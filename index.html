@@ -36,7 +36,7 @@
         /* fix browser bounce */
         body
         {
-            overflow-x:auto;
+            overflow-x:hidden;
             width:100%;
             overscroll-behavior:none;
         }
@@ -121,9 +121,42 @@
         .showcase
         {
             background-color:var(--color-secondary);
-            background-image:linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+            /* background-image:linear-gradient(to bottom, var(--color-primary), var(--color-secondary)); */
+            background-image:url(img/background02.jpg);
+            background-size:cover;
             padding:30px;
             padding-bottom:50px;
+            position: relative;
+        }
+        #button img
+        {
+            width:15%;
+            position:absolute;
+            right:5px;
+            top:150px;
+        }
+        #button img:hover
+        {
+            cursor: pointer;
+        }
+        .changeImg
+        {
+            animation-name:animateImg;
+            animation-duration:2s;
+        }
+        @keyframes animateImg
+        {
+            0%{}
+            100%{}
+        }
+        #log
+        {
+            width:20%;
+            position:absolute;
+            right:-500px;
+            top:-20px;
+            transform:rotate(-30deg);
+            display:none;
         }
         #showcase-text
         {
@@ -131,6 +164,11 @@
             text-align:center;
             margin:50px auto;
             max-width:500px;
+        }
+        #button
+        {
+            background-image:url(img/button.png);
+            width:300px;
         }
         .showcase h1
         {
@@ -271,6 +309,7 @@
             h1, h2{text-align:left;}
 
             .footerlinks{display:block;}
+            .header{height:120px;}
             header img
             {
                 height:100px;
@@ -280,6 +319,8 @@
             .showcase h1{font-size:70px;}
             .showcase h2{font-size:40px;}
             #horse{display: block;}
+            #button img
+            {width:10%;}
         }
         @media (min-width:960px)
         {
@@ -292,6 +333,7 @@
             {
                 display:none;
             }
+            #button img{width:5%;}
         }
     </style>
 </head>
@@ -327,7 +369,7 @@
             <img src="img/gang.jpg" alt="Framework-Logos" class="logos" id="gangL">
             <img src="img/gang.jpg" alt="Framework-Logos" class="logos-small" id="gangS">
         </div>
-
+        <!-- <div id="button"><img src="img/button.png" alt="Button"></div> -->
         <p class="showcase-demo">
             <small>Work Showcase</small>
         </p>
@@ -416,4 +458,19 @@
     </footer>
     <!-- End footer section -->
 </body>
+<script>
+    let img = document.getElementById('gangL');
+    let toggle = true;
+    img.addEventListener('click', animateButton);
+    function animateButton()
+    {
+        toggle = !toggle;
+        if (toggle){
+            img.src = 'img//gang.jpg'
+        }else{
+            img.src = 'img//logs.jpg'
+        }
+        // img.src = 'img//logs.jpg';
+    }
+</script>
 </html>
