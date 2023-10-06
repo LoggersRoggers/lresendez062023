@@ -198,14 +198,7 @@
             color:#fff;
             text-align:center;
         }
-        #gangL
-        {
-            width:60%;
-            border:5px solid black;
-            border-radius:5%;
-            max-width:1000px;
-        }
-        #gangS
+        #gang
         {
             width:90%;
             border:3px solid black;
@@ -231,7 +224,7 @@
             flex-basis:28%;
             position: relative;
         }
-        #horse
+        .horse
         {
             position: absolute;
             width:40%;
@@ -240,7 +233,7 @@
             max-width:80px;
             display:none;
         }
-        #horse:hover
+        .horse:hover
         {cursor:pointer;}
         /* Page Content */
         .page-content
@@ -318,9 +311,14 @@
             .menu li a{font-size:20px;}
             .showcase h1{font-size:70px;}
             .showcase h2{font-size:40px;}
-            #horse{display: block;}
-            #button img
-            {width:10%;}
+            .horse{display: block;}
+            #gang
+        {
+            width:60%;
+            border:5px solid black;
+            border-radius:5%;
+            max-width:1000px;
+        }
         }
         @media (min-width:960px)
         {
@@ -366,8 +364,7 @@
         </div>
 
         <div class="showcase-img">
-            <img src="img/gang.jpg" alt="Framework-Logos" class="logos" id="gangL">
-            <img src="img/gang.jpg" alt="Framework-Logos" class="logos-small" id="gangS">
+            <img src="img/gang.jpg" alt="Framework-Logos" class="logos" id="gang">
         </div>
         <!-- <div id="button"><img src="img/button.png" alt="Button"></div> -->
         <p class="showcase-demo">
@@ -383,19 +380,19 @@
             <div class="card">
                 <h3> Career </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptates.</p>
-                <img src="img/horsie.svg" alt="Horse" id="horse">
+                <div id="horseContainer"><img src="img/horsie.svg" alt="Horse" class="horse"></div>
             </div>
     
             <div class="card">
                 <h3> Design </h3> 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, reiciendis?</p>
-                <img src="img/horsie.svg" alt="Horse" id="horse">
+                <div id="horseContainer"><img src="img/horsie.svg" alt="Horse" class="horse"></div>
             </div>
     
             <div class="card">
                 <h3> Programming </h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, quo.</p>
-                <img src="img/horsie.svg" alt="Horse" id="horse">
+                <div id="horseContainer"><img src="img/horsie.svg" alt="Horse" class="horse"></div>
             </div>
         </div>
         <!-- End container -->
@@ -459,7 +456,8 @@
     <!-- End footer section -->
 </body>
 <script>
-    let img = document.getElementById('gangL');
+    // Animate Showcase Image
+    let img = document.getElementById('gang');
     let toggle = true;
     img.addEventListener('click', animateButton);
     function animateButton()
@@ -470,7 +468,14 @@
         }else{
             img.src = 'img//logs.jpg'
         }
-        // img.src = 'img//logs.jpg';
+    }
+
+    // Animate Horses
+    let horse = document.getElementById('horseContainer');
+    horse.addEventListener('click', animateHorse);
+    function animateHorse()
+    {
+        
     }
 </script>
 </html>
