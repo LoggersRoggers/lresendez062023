@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PA008 - JavaScripy AddClass - ToggleClass</title>
+    <style>
+    div
+    {
+        width:100px;
+        height:100px;
+        background-color:lime;
+        margin:2rem;
+        padding:1rem;
+        text-align: center;
+        border:1px solid black;
+    }
+    .red
+    {
+        background-color:red;
+    }
+    .round
+    {
+        border-radius:50%;
+    }
+    
+    .animate
+    {
+        animation-name:scaleme;
+        animation-duration:1s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes scaleme
+    {
+        from{transform:scale(1);}
+        to{transform:scale(9);}
+    }
+    </style>
+</head>
+<body>
+    <div id="one"  onclick="styleRed()">One - Add Style</div>
+    <div id="two" onclick="addRedClass()">Two - Add Class</div>
+    <div id="three" onclick="toggleRedClass()"> Three - Toggle Class</div>
+
+    <script>
+        function styleRed()
+        {
+            // window.alert("hi");
+            let e; // Create Variable for an element 
+            e = window.document.querySelector('#one')
+        
+            // window.alert(e);
+        
+            e.style.backgroundColor = 'red';
+        }
+    
+        function addRedClass()
+        {
+            let e; // Create variable for an element
+            e = window.document.querySelector("#two");
+            // window.alert(e);
+            e.classList.add("red");
+        }
+
+        function toggleRedClass()
+        {
+            let e; // Create variable for an element
+            e = window.document.querySelector("#three");
+            // window.alert(e);
+            e.classList.toggle("red");
+            e.classList.toggle("round");
+            e.classList.toggle("animate");
+        }
+    </script>
+</body>
+</html>

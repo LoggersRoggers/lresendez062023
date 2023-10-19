@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PA009 - JavaScript - Class Animation</title>
+    <style>
+    #four
+    {
+        width:120px;
+        height:120px;
+        background-color:olive;
+        padding:1rem;
+        color:white;
+        text-align:center;
+    }
+    /* animations */
+    .animaterotator
+    {
+        animation-name:rotator;
+        animation-duration:2s;
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+        animation-timing-function:linear;
+    }
+    @keyframes rotator
+    {
+        from{transform:rotateY(0deg); margin-left:0px;}
+        to{transform:rotateY(1440deg);  margin-left:500px;}
+    }
+    </style>
+</head>
+<body>
+    <h1>PA009 - JavaScript - Class Animation</h1>
+    <div id="four" onclick="addAnimation()">Four - Add Animation Class</div>
+    <script>
+        function addAnimation()
+        {
+            // window.alert();
+            let e; // To hold the element
+            e = window.document.querySelector('#four');
+            // window.alert(e);
+            e.classList.toggle('animaterotator');
+        }
+    </script>
+</body>
+</html>

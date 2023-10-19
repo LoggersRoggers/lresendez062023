@@ -1,0 +1,32 @@
+body
+{
+    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+}
+h1
+{text-align:center;}
+
+div
+{
+color:white;
+margin:auto;
+margin-bottom:40px;
+padding:10px;
+}
+div.box
+{
+width:200px;
+height:200px;
+background-color:steelblue;
+}
+div#one
+{
+    background-color:steelblue;
+}
+div#two
+{
+    background-color:steelblue;
+}
+div#three
+{
+    background-color:steelblue;
+}

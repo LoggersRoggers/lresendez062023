@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+<style>
+button
+{
+border-radius:1rem;
+padding:1rem;
+}
+/* Style all divs */
+div
+{
+margin:2rem;
+height:200px;
+width:200px;
+border:1px solid black;
+padding:1rem;
+}
+/* Style individual divs */
+#div001
+{
+background-color:crimson;
+transition:all 2s;
+}
+.div002
+{
+background-color:steelblue;
+transition:all 2s;
+}
+</style>
+</head>
+<body>
+<button onclick="changeDiv1()">Change Element1</button>
+<button onclick="changeDiv2()">Change Element2</button>
+
+<div id="div001" onclick="changeDiv1()">id div001</div>
+<div class="div002" onmouseover="changeDiv2()">class div002</div>
+
+<script>
+// Make interactive
+function changeDiv1()
+{
+// Create a variable
+const d1 = window.document.querySelector('#div001');
+d1.style.backgroundColor="lime";
+d1.style.marginLeft="900px";
+}
+function changeDiv2()
+{
+const d2 = window.document.querySelector('.div002');
+d2.style.backgroundColor="gray";
+d2.style.marginLeft="900px";
+}
+function changeDiv3()
+{
+window.alert('hello.')
+}
+</script>
+</body>
+</html>

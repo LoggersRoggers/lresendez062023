@@ -1,0 +1,281 @@
+      /* Build mobile first */
+      /*CSS Essentials */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html,
+    body {
+        height: 100%;
+    }
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        max-width: 100%;
+        display: block;
+    }
+    body {
+        line-height: 1.5;
+    }
+    body 
+    {
+        overscroll-behavior: none;
+        overflow-x: hidden;
+        width: 100%;
+    }
+      /* CSS Colors */
+    body {
+        background-color: #67645c;
+        background-image: url(Images/eldrenring.jpeg);
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    #container {
+        background-color: #194743;
+        border: 3px solid black;
+        width: 90%;
+        max-width: 1000px;
+        padding: 2rem;
+        margin: 0 auto;
+        margin-top: 50px;
+        border-radius: 1.5rem;
+    }
+    #wrapper {
+        max-width: 960px;
+        border-radius: 1.9rem;
+        margin: auto;
+        border: 3px solid black;
+    }
+    #pageheader {
+        min-height: 275px;
+        background-color: #67645c;
+        background-image: url(Images/erdtree.jpeg);
+        background-size: cover;
+        padding: 1rem;
+        padding-top: 100px;
+        border-radius: 1.5rem 1.5rem 0 0;
+        grid-area: ph;
+        position: relative;
+    }
+    #sword
+    {
+        background-image:url(Images/swordofnightandflame.png);
+        width:66.6px;
+        height:224.3px;
+        position: absolute;
+        background-size:cover;
+        top:-75px;
+        left:-55px;
+        transition:all 4s;
+    }
+    #sword2
+    {
+        background-image:url(Images/swordofnightandflame2.png);
+        width:224.6px;
+        height:46.6px;
+        position: absolute;
+        background-size:cover;
+        top:-45px;
+        left:-120px;
+        transition:all 4s;
+    }
+    .styleclass
+    {
+        animation-name:addanimations;
+        animation-duration:4s;
+        animation-delay:2s;
+        animation-iteration-count:1;
+        animation-timing-function:linear;
+        animation-fill-mode: forwards;
+    }
+    @keyframes addanimations
+    {
+        0%{}
+        50%{transform:rotate(450deg); left:835px; top:10px;}
+        100%{transform:rotate(-360deg); left:-120px; top:-45px;}
+    }
+    blockquote,
+    #quote {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        text-shadow: 2px 2px 2px black;
+    }
+    #quote {
+        display: block;
+        font-size: 20px;
+    }
+    #pagenav {
+        background-color: #c19a5b;
+        padding: 1rem;
+        grid-area: pn;
+        display:none;
+    }
+    #media {
+        background-color: #c19a5b;
+        padding: 1rem;
+        min-height: 250px;
+        grid-area: me;
+        transition:all 2s;
+    }
+    iframe
+    {
+    width:90%;
+    display:block;
+    margin:auto;
+    aspect-ratio:16/9;
+    border-radius:5%;
+    }
+    #pagemain {
+        background-color:#1c2f32;
+        /* rgb(255, 255, 255) */
+        color: white;
+        font-size: 17px;
+        text-shadow: 2px 2px 2px black;
+        padding: 1rem;
+        min-height: 250px;
+        grid-area: pm;
+    }
+    #pagemain img {
+        width: 80%;
+        display: block;
+        margin: auto;
+        border: 2px solid black;
+        border-radius: 5%;
+    }
+    #pagemain img:hover {
+        box-shadow: 5px 5px 5px black;
+    }
+    .quarters {
+        background-color: khaki;
+        padding: 1rem;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        border: 1px solid #1c2f32;
+        min-height: 200px;
+    }
+    #q1 {
+        background-color: #c19a5b;
+        grid-area: q1;
+    }
+    #q2 {
+        background-color: #c19a5b;
+        grid-area: q2;
+    }
+    #q3 {
+        background-color: #c19a5b;
+        grid-area: q3;
+    }
+    #q4 {
+        background-color: #c19a5b;
+        grid-area: q4;
+    }
+    #pagefooter {
+        background-color: #1c2f32;
+        padding: 1rem;
+        grid-area: pf;
+        text-align: center;
+        color:white;
+    }
+    #pagefooter a:hover
+    {
+    color:#c19a5b;
+    }
+    #subfooter {
+        background-color: #c19a5b;
+        padding: 1rem;
+        min-height: 150px;
+        border-radius: 0 0 1.5rem 1.5rem;
+        grid-area: sf;
+        text-align: center;
+        color:white;
+        position: relative;
+    }
+    #shield
+    {
+        background-image:url(Images/shield.png);
+        width:85px;
+        min-height: 145px;
+        position:absolute;
+        right:-50px;
+        bottom:20px;
+    }
+    a {
+        color: white;
+    }
+    a:hover {
+        color: #1c2f32;
+        text-shadow: none;
+    }
+      /* Media Queries */
+    @media screen and (min-width: 321px) {
+        /* #container
+{
+background-color:crimson;
+} */
+    }
+    @media screen and (min-width: 480px) {
+        /* #container
+{
+background-color:aquamarine;
+} */
+        #wrapper {
+        display: grid;
+        grid-template-areas:
+            "ph ph ph ph ph ph ph ph"
+            "pn pn pn pn pn pn pn pn"
+            "me me me me me me me me"
+            "pm pm pm pm pm pm pm pm"
+            "q1 q1 q1 q1 q2 q2 q2 q2"
+            "q3 q3 q3 q3 q4 q4 q4 q4"
+            "pf pf pf pf pf pf pf pf"
+            "sf sf sf sf sf sf sf sf";
+        }
+    }
+      /* 768, 960, 1024, 1200, 1440, 1920 */
+    @media screen and (min-width: 768px) {
+        /* #container{
+background-color:forestgreen;
+} */
+    }
+    @media screen and (min-width: 960px) {
+        /* #container{
+background-color: darkblue;
+} */
+    }
+    @media screen and (min-width: 1024px) {
+        /* #container{
+background-color:gray;
+} */
+        #wrapper {
+          /* Grid  */
+        display: grid;
+        grid-template-areas:
+            "ph ph ph ph ph ph ph ph"
+            "pn pn pn pn pn pn pn pn"
+            "me me me me me me me me"
+            "pm pm pm pm pm pm pm pm"
+            "q1 q1 q2 q2 q3 q3 q4 q4"
+            "pf pf pf pf pf pf pf pf"
+            "sf sf sf sf sf sf sf sf";
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        /* #container{
+background-color:goldenrod;
+} */
+    }
+    @media screen and (min-width: 1440px) {
+        /* #container{
+background-color:#194743;
+} */
+    }
+    @media screen and (min-width: 1920px) {
+        /* #container{
+background-color:cornflowerblue; 
+} */
+    }

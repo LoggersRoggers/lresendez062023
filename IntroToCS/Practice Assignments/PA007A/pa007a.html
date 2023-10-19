@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <style>
+button
+{
+border-radius:1rem;
+padding:1rem;
+display:block;
+margin:auto;
+margin-bottom:1rem;
+}
+#d001
+{
+height:200px;
+width:200px;
+border:1px solid black;
+background-color:cadetblue;
+margin:auto;
+padding:1rem;
+}
+    </style>
+</head>
+        <body>
+<button onclick="changeDiv1()">Change Element</button>
+
+<div class="display" id="d001">div001</div>    
+<script>
+function changeDiv1()
+{
+let d1;
+d1 = window.document.querySelector("#d001");
+d1.style.backgroundColor="gray";
+d1.style.color="white";
+d1.style.textAlign="center";
+d1.style.borderRadius="50%";
+
+}
+    </script>
+        </body>
+</html>

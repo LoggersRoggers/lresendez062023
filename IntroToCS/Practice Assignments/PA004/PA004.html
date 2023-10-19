@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+<style>
+#container
+{
+background-color:blueviolet;
+border:3px solid black;
+min-height:500px;
+border-radius:25px;
+}
+
+
+@media screen and (min-width:480px)
+{
+body
+{background-color:yellow;}
+#container{background-color:red;}
+}
+
+@media screen and (min-width:640px) 
+{
+body{background-color:steelblue}
+#container{border:15px solid navy;}
+}
+
+@media screen and (max-width:320px)
+{
+body{background-color:white;}
+#container{border:5px dashed black; background-color: aqua;}
+}
+</style>
+</head>
+<body>
+<h1>Responsive Design</h1>
+
+<div id="container">
+
+<script>
+//Detect inner widnow size
+window.alert("Hello World");
+window.alert(window.innerWidth);
+
+</script>
+</div>
+</body>
+</html>

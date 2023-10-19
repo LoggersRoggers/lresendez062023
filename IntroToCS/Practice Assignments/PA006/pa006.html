@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded, External, and Inline Code</title>
+<link rel="stylesheet" href="style.css">
+<script src="javascript.js">
+//External JS
+
+</script>
+    <style>
+div
+/*Embedded*/
+{
+width:50%;
+height:100px;
+margin:auto;
+margin-top:15px;
+background-color:darkred;
+}
+div#inlinecss
+{
+background-color:lime;
+}
+
+div#inlinejs
+{
+background-color:lightblue;
+}
+    </style>
+</head>
+<body>
+<h1>Embedded, External, and Inline</h1>
+
+<div id="inlinecss" style="border:5px solid yellow;">
+
+
+</div>
+
+<div id="inlinejs" style="border:5px solid red;" onclick="window.alert=('Inline JS')";>
+
+</div>
+
+<script>
+    //Embedded Jacascript
+    
+    window.document.write("Embedded JS");
+        </script>
+    
+</body>
+</html>

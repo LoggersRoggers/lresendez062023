@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers Generator</title>
+    <style>
+        body
+        {
+            text-align:center;
+            font-size:2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Numbers Generator</h1>
+
+    <script>
+        // Create Variable to Hold Random Numbers
+        var randomNum;
+
+        // randomNum = Math.random();
+        // randomNum = randomNum * 100;  //Creates Random Number From 0-99
+        // randomNum = Math.floor(randomNum);  //Removes Decimals
+        // randomNum = randomNum + 1;  //Creates Random Number From 1-100
+
+
+        for(var i = 0; i< 10; i++)
+        {
+            randomNum = Math.floor(Math.random()*100) +1;
+            window.document.write(randomNum + " | ");
+        }
+    </script>
+</body>
+</html>

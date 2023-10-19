@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop</title>
+    <style>
+        body
+        {
+            background-image:url(Images/dirt.jpg);
+            overscroll-behavior:none;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        // Create Variables
+        let bugcount;
+        let buglimit;
+
+        // Assign Values
+        bugcount = 1;
+        buglimit = Math.floor(Math.random()*20) +1;
+
+        // While Loop Control Strucure
+        while(bugcount <= buglimit)
+        {
+            window.document.write(" <img id='beetle' src='Images/littlebug.gif' alt='Little Bug'> ");
+            bugcount++;
+            window.document.write(" <img id='bee' src='Images/bee.gif' alt='Bee'> ");
+            bugcount++
+        }
+    </script>
+</body>
+</html>

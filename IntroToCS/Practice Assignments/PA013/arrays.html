@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arrays</title>
+<style>
+body
+{
+    font-weight:bold;
+    line-height:1.7;
+    font-family:'Courier New', Courier, monospace;
+}
+h1{text-align:center;}
+</style>
+</head>
+<body>
+<script>
+// Create variable for your name
+let name;
+name  = "Logan";
+
+// Concatination (join)
+window.alert("My name is " + name);
+
+// Use HTML within text
+window.document.write("<h1>" + name + "</h1>");
+
+// Store a color variable
+const color = "red";  // requires value upon creation
+
+// Write color to the page
+document.write(color + "<br>");
+
+// Arrays - variable with multiple values
+let rainbowColors = ["red", "orange", "yellow", "lime", "blue", "indigo", "magenta"];
+
+// Displays all array values
+document.write(rainbowColors + "<br>");
+
+// Get number of values in array
+document.write(rainbowColors.length + "<br>");
+
+// Get individual colors by index (zero based)
+document.write(rainbowColors[2] + "<br>");
+document.write(rainbowColors[0] + "<br>");
+document.write(rainbowColors[5] + "<br>");
+
+// Loop through an array
+for(let i = 0; i < rainbowColors.length; i++)
+{
+    document.write("Color " + i + ":" + rainbowColors[i] + "<br>");
+}
+
+</script>
+</body>
+</html>

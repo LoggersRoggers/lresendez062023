@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=L, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landscape</title>
     <style>
       * {
@@ -30,7 +30,30 @@
     <script>
       // Create variables
       const canvas = window.document.querySelector('#canvas');
+      canvas.style.backgroundColor = 'lightBlue';
       const ctx = canvas.getContext('2d');
+
+      // Draw Hill
+        ctx.fillStyle = 'rgb(100,200,100)';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 10;
+        ctx.arc(500, 1050, 700, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke(); 
+
+        // Draw Tree 1
+        ctx.fillStyle = 'brown';
+        ctx.strokeRect(450,200,50,150);
+        ctx.fillRect(450, 200, 50, 150);
+        
+        ctx.beginPath();
+        ctx.moveTo(300, 280);
+        ctx.lineTo(480, 20);
+        ctx.lineTo(650, 280);
+        ctx.closePath();
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        ctx.stroke();
     </script>
   </body>
 </html>

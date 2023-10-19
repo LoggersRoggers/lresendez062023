@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons and Functions</title>
+<style>
+div.display
+{
+height:200px;
+width:200px;
+background-color:slategrey;
+border:3px solid black;
+margin:auto;
+margin-top:2rem;
+padding:1rem;
+}
+
+
+
+</style>
+</head>
+<body>
+<div id="buttons">
+<button onclick="window.alert('zero')">Change Button Zero</button>
+<button onclick="changeDiv1()">Change Button One</button>
+<button onclick="changeDiv2()">Change Button Two</button>
+<button onclick="changeDiv3()">Change Button Three</button>
+</div>
+
+<div class="display" id="d000">000</div>
+<div class="display" id="d001">001</div>
+<div class="display" id="d002">002</div>
+<div class="display" id="d003">003</div>
+
+<script>
+// Functions
+// Create Variable
+let d0;
+//Give Variable a Value
+d0 = window.document.querySelector("#d000");
+// window.alert(d0.id);
+// Change Style of variable object
+d0.style.backgroundColor="blue";
+
+function changeDiv1()
+{
+// window.alert("one!");
+let d1;
+d1 = window.document.querySelector("#d001");
+d1.style.backgroundColor="red";
+d1.style.color="white";
+d1.style.textAlign="center";
+}
+
+
+function changeDiv2()
+{
+let d2;
+d2 = window.document.querySelector("#d002")
+d2.style.backgroundColor="green";
+d2.style.color="white";
+d2.style.textAlign="center";
+}
+
+function changeDiv3()
+{
+let d3;
+d3 = window.document.querySelector("#d003")
+d3.style.backgroundColor="pink";
+d3.style.color="white";
+d3.style.textAlign="center";
+
+}
+</script>
+</body>
+</html>
