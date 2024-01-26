@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paint Brush Version 1</title>
+    <title>Paint Brush Version 4</title>
     <style>
         *
         {
@@ -28,7 +28,12 @@
             position:fixed;
             padding:1rem;
             bottom:0;
-
+        }
+        #eraser
+        {
+            width:40px;
+            position:fixed;
+            left:210px;
         }
     </style>
 </head>
@@ -39,6 +44,7 @@
     <section id="menu">
         <input type="color" id="colorpicker" value = "#000000">
         <input type="range" id="rangepicker" min = "2" max = "100" value = "15">
+        <img src="Images/eraser.svg" alt="Eraser" id="eraser" min = "2" max = "100" value = "15">
     </section>
 
     <script>
@@ -52,13 +58,15 @@
         const canvas = window.document.querySelector('#canvas');
         const ctx = canvas.getContext('2d');
 
-        // Change Line Cap\
+        // Change Line Cap
         ctx.lineCap = 'round';
 
         // Colorpicker variable
         const colorPicker = window.document.querySelector('#colorpicker');
         // Rangepicker variable
         const rangePicker = window.document.querySelector('#rangepicker');
+        // Eraser variable
+        const eraser = window.document.querySelector('#eraser');
 
         // Set the canvas size
         canvas.width = window.innerWidth;
@@ -82,6 +90,11 @@
         // Add event listner to rangepicker
         rangePicker.addEventListener('input', function(e){
             brushSize = e.target.value;
+        })
+
+        // Add event listener to eraser
+        eraser.addEventListener('click', function(e){
+            brushColor = canvasColor;
         })
 
         // Add several event listeners to the canvas
@@ -111,6 +124,7 @@
                 // ctx.beginPath();
                 ctx.strokeStyle = brushColor;
                 ctx.lineWidth = brushSize;
+                ctx.lineJoin = "round";
                 // ctx.arc(mouse.x, mouse.y, brushSize, 0, Math.PI * 2);
                 ctx.lineTo(mouse.x, mouse.y);
                 ctx.stroke();

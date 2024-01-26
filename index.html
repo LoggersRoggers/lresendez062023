@@ -257,8 +257,14 @@
             margin:20px 0;
         }
         .semesters h2 {font-size:40px;}
-        .semesters h3 {font-size:25px;}
-
+        .semesters h3 {font-size:35px;}
+        .semesters a
+        {
+            color:var(--color-primary);
+            font-size:20px;
+            font-style: italic;
+        }
+        .semesters a:hover{color:var(--color-secondary);}
         /* Footer section */
         .footer
         {
@@ -421,11 +427,13 @@
     <section class="semesters">
         <div class="container">
             <h2> Key Assignments </h2>
-
-            <h3> Semester 1 </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fugit nisi temporibus qui. Ex molestias amet doloribus asperiores voluptatibus modi.</p>
-
-            <h3> Semester 2 </h3>
+                <h3> Semester 1 </h3> <hr>
+                <a href="Activities/PaintbrushPrototype6/paintbrushprototype6b.html"> Paintbrush Prototype 6B </a> <br>
+                <a href="Demos/Canvas/canvasdrawing1.html"> Canvas Drawing 1</a> <br>
+                <a href="Demos/Canvas/canvasdrawing2.html"> Canvas Drawing 2</a> <br>
+                <a href="Images/markdown4.png"> Markdown 4 </a>
+                
+            <h3> Semester 2 </h3> <hr>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente neque doloremque dolores dolorem voluptatum. A aut fugit quis nobis impedit.</p>
         </div>
     </section>
@@ -438,7 +446,8 @@
             <div class="quote">
                 <h3> Final Thoughts </h3>
                 <blockquote>
-                    "Look just do one thing or the other, don't try to be two people at once, that's all I'm saying."
+                    <div id="quotegenerator"></div>
+                    <!-- "Look just do one thing or the other, don't try to be two people at once, that's all I'm saying." -->
                 </blockquote>
                 <p> - Arthur Morgan </p>
             </div>
@@ -477,5 +486,15 @@
     {
         
     }
+    const rqg = document.querySelector('#quotegenerator');
+    let quotes = [];
+    quotes.push("Look just do one thing or the other, don't try to be two people at once, that's all I'm saying.");
+    quotes.push("We can't change what's done, we can only move on.");
+    quotes.push("Lack Of Something To Feel Important About Is Almost The Greatest Tragedy A Man May Have.");
+    quotes.push("You Don't Get To Live A Bad Life And Have Good Things Happen To You.");
+    quotes.push("If you find yourself in a hole, the first thing to do is to stop digging.");
+    const rn = Math.floor(Math.random() * quotes.length);
+    // alert(rn);
+    rqg.innerHTML = quotes[rn];
 </script>
 </html>

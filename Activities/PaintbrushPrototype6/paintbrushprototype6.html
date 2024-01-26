@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paint Brush Version 1</title>
+    <title>Paint Brush Version 6</title>
     <style>
         *
         {
@@ -28,7 +28,28 @@
             position:fixed;
             padding:1rem;
             bottom:0;
-
+        }
+        #eraser
+        {
+            width:40px;
+            position:fixed;
+            left:210px;
+        }
+        #clear
+        {
+            width:65px;
+            position:fixed;
+            left:260px;
+            bottom:10px;
+        }
+        #prevcolor
+        {
+            width:50px;
+            height:30px;
+            border:5px solid white;
+            position:fixed;
+            left:335px;
+            bottom:10px;
         }
     </style>
 </head>
@@ -39,26 +60,43 @@
     <section id="menu">
         <input type="color" id="colorpicker" value = "#000000">
         <input type="range" id="rangepicker" min = "2" max = "100" value = "15">
+        <img src="Images/eraser.svg" alt="Eraser" id="eraser" min = "2" max = "100" value = "15">
+        <img src="Images/clearbutton.png" alt="Clear" id="clear">
+        <div id="prevcolor"></div>
     </section>
 
     <script>
-        // Create javascript variables
-        let canvasColor = 'white';
-        let brushColor = 'black';
-        let painting = false;
-        let brushSize = 15;
+        
 
         // Create and assign variables
         const canvas = window.document.querySelector('#canvas');
         const ctx = canvas.getContext('2d');
 
-        // Change Line Cap\
+        // Change Line Cap
         ctx.lineCap = 'round';
 
         // Colorpicker variable
         const colorPicker = window.document.querySelector('#colorpicker');
         // Rangepicker variable
         const rangePicker = window.document.querySelector('#rangepicker');
+        // Eraser variable
+        const eraser = window.document.querySelector('#eraser');
+        // Clear variable
+        const clear = window.document.querySelector('#clear');
+
+// Create javascript variables
+        let canvasColor = 'white';
+        let brushColor = colorPicker.value;
+        let painting = false;
+        let brushSize = 15;
+        let isActivePreviousColor = false;
+        let previousColor = brushColor;
+
+        // Previous Color variable
+        const prevColor = window.document.querySelector('#prevcolor');
+
+        // Save current color variable
+        
 
         // Set the canvas size
         canvas.width = window.innerWidth;
@@ -66,6 +104,9 @@
 
         // Set canvas color
         canvas.style.backgroundColor = canvasColor;
+
+        // Set previous color box color
+        prevColor.style.backgroundColor = brushColor;
 
         // Create mouse object
         const mouse = {
@@ -77,11 +118,36 @@
 
         // Add event listener to color picker
         colorPicker.addEventListener('input', function(e){
+            previousColor = brushColor;
             brushColor = e.target.value;
+            if(isActivePreviousColor == false)
+            {
+                isActivePreviousColor = true
+            }
+            else{
+            prevColor.style.backgroundColor = previousColor;}
         });
         // Add event listner to rangepicker
         rangePicker.addEventListener('input', function(e){
             brushSize = e.target.value;
+        })
+
+        // Add event listener to eraser
+        eraser.addEventListener('click', function(e){
+            brushColor = canvasColor;
+        })
+
+        // Add event listener to clear
+        clear.addEventListener('click', function(e){
+            ctx.fillStyle = canvasColor;
+            ctx.fillRect(0, 0, canvas.width ,canvas.height );
+            console.log(e);
+        })
+
+        // Add event listener to previous color box
+        prevColor.addEventListener('click', function(){
+            // alert(previousColor);
+            brushColor = previousColor;
         })
 
         // Add several event listeners to the canvas
@@ -111,6 +177,7 @@
                 // ctx.beginPath();
                 ctx.strokeStyle = brushColor;
                 ctx.lineWidth = brushSize;
+                ctx.lineJoin = "round";
                 // ctx.arc(mouse.x, mouse.y, brushSize, 0, Math.PI * 2);
                 ctx.lineTo(mouse.x, mouse.y);
                 ctx.stroke();

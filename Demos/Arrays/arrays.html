@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+    <h2>Index, Push, Pop, Shift</h2>
+    <h2>ForEach, Console.log</h2>
+    <script>
+        // Arrays
+
+        // Create array variable
+        let countryNames = [];
+
+        // Add values to array using an index
+        countryNames[0] = "United States of America";
+        countryNames[1] = "Mexico";
+        countryNames[2] = "Japan";
+        countryNames[3] = "China";
+
+        // Add values to array using the push method
+        countryNames.push("Canada");
+        countryNames.push("France");
+        countryNames.push("Argentina")
+        countryNames.push("Ecuador");
+
+        // window.document.write(myList);
+
+        // Delete last value of an array using the pop method
+        countryNames.pop();
+
+        // Delet first value of an array using the shift method
+        countryNames.shift();
+
+        // alert(myList); 
+
+        console.log(countryNames);
+
+        // List array length
+        console.log(countryNames.length);
+
+        // Cycle through array using forEach method
+        countryNames.forEach(   function(cn, index){
+            console.log(index + ' ' + cn)
+        });
+
+        countryNames.forEach(   function(cn, index){
+            alert(cn + ' is index ' + index);
+        })
+    </script>
+</body>
+</html>

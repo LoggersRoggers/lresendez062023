@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fruit Array</title>
+</head>
+<body>
+    <h1>Random Fruit Array</h1>
+
+    <div id="displayrandomfood">
+
+    </div>
+
+    <script>
+        // Create Fruit Array
+        let foodList = ['apple.png', 'banana.png', 'cherry.png', 'grape.png'];
+        // Add a few more items
+        foodList.push('peach.png');
+        foodList.push('pear.png');
+        foodList.push('strawberyy.png');
+
+        // Display in console
+        // console.log(foodList);
+        
+        foodList.pop(); // Delete last item
+        foodList.shift(); // Delete first item
+
+        // Generate random number
+        // let randomNumber;
+        // randomNumber = Math.floor(Math.random() * foodList.length);
+        // alert(foodList[randomNumber]);
+
+        // Create div object
+        const drf = window.document.querySelector('#displayrandomfood');
+        // alert(drf);
+        drf.innerHTML = "<img src = 'Images/" + foodList[generateRN()] + "' alt = 'fruit' >" + "<img src = 'Images/" + foodList[generateRN()] + "' alt = 'fruit' >" + "<img src = 'Images/" + foodList[generateRN()] + "' alt = 'fruit' >";
+        
+        // Center innerHTML
+        
+
+        // See all items in foodList Array
+
+        foodList.forEach(function(item){
+            console.log("Yummy " + item + "!");
+        });
+
+        generateRN();
+        function generateRN()
+        {
+            let rn;
+            rn = Math.floor(Math.random() * foodList.length);
+            console.log(rn);
+            return rn;
+        }
+</script>
+</body>
+</html>
